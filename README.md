@@ -50,7 +50,7 @@ combine  -M AsymptoticLimits --datacard cards-DMSimp_MonoZLL_NLO_Axial_1000_MXd-
 Making impacts plot
 
 ```bash
-export PARAM = "--rMin=-1 --rMax=4 --cminFallbackAlgo Minuit2,Migrad,0:0.05 --X-rtd MINIMIZER_analytic --X-rtd FAST_VERTICAL_MORPH"
+export PARAM="--rMin=-1 --rMax=4 --cminFallbackAlgo Minuit2,Migrad,0:0.05 --X-rtd MINIMIZER_analytic --X-rtd FAST_VERTICAL_MORPH"
 
 combineTool.py -M Impacts -d cards-DMSimp_MonoZLL_NLO_Axial_1000_MXd-1/combined.root -m 125 --robustFit 1 --doInitialFit $PARAM
 combineTool.py -M Impacts -d cards-DMSimp_MonoZLL_NLO_Axial_1000_MXd-1/combined.root -m 125 --robustFit 1 --doFits $PARAM
