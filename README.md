@@ -50,11 +50,11 @@ combine  -M AsymptoticLimits --datacard cards-DMSimp_MonoZLL_NLO_Axial_1000_MXd-
 Making impacts plot
 
 ```bash
-export PARAM = " --rMin=-10 --cminFallbackAlgo Minuit2,Migrad,0:0.05  --X-rtd MINIMIZER_analytic --X-rtd FAST_VERTICAL_MORPH --rMax=10"
+export PARAM = "--rMin=-1 --rMax=4 --cminFallbackAlgo Minuit2,Migrad,0:0.05 --X-rtd MINIMIZER_analytic --X-rtd FAST_VERTICAL_MORPH"
 
-combineTool.py -M Impacts -d cards-DMSimp_MonoZLL_NLO_Axial_1000_MXd-1/combined.root -m 125 -n TEST --robustFit 1 --X-rtd FITTER_DYN_STEP --rMin=-1 --rMax=4 --doInitialFit --allPars $PARAM
-combineTool.py -M Impacts -d cards-DMSimp_MonoZLL_NLO_Axial_1000_MXd-1/combined.root -m 125 -n TEST --robustFit 1 --X-rtd FITTER_DYN_STEP --rMin=-1 --rMax=4 --doFits --allPars $PARAM
-combineTool.py -M Impacts -d cards-DMSimp_MonoZLL_NLO_Axial_1000_MXd-1/combined.root -m 125 -n TEST -o impactsTEST.json --allPars $PARAM
+combineTool.py -M Impacts -d cards-DMSimp_MonoZLL_NLO_Axial_1000_MXd-1/combined.root -m 125 --robustFit 1 --doInitialFit $PARAM
+combineTool.py -M Impacts -d cards-DMSimp_MonoZLL_NLO_Axial_1000_MXd-1/combined.root -m 125 --robustFit 1 --doFits $PARAM
+combineTool.py -M Impacts -d cards-DMSimp_MonoZLL_NLO_Axial_1000_MXd-1/combined.root -m 125 -o impactsTEST.json $PARAM
 
 # plot everything now:
 plotImpacts.py -i impactsTEST.json -o impactsTEST
